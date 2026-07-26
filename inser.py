@@ -11,3 +11,5 @@ for i in range (1,n):
 print(a)
 
 
+
+print(sorted(a))
