@@ -12,4 +12,3 @@ print(a)
 
 
 
-print(sorted(a))

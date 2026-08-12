@@ -17,7 +17,7 @@ secondNode.right=fifthNode
 def binaryprint(n,level=0,label='Root'):
         if n is None:
             return 
-        print(""*(level*3)+ f"{label}:{n.data}")
+        print(" "*(level*3)+ f"{label}:{n.data}")
         binaryprint(n.left,level+1,"L")
         binaryprint(n.right,level+1,"R")
         
