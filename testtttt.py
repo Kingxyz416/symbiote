@@ -1,64 +1,34 @@
-a=[10,20,30,40,0,0,0,0,0,0]
-n=4
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
 
+def insert(root, value):
+    if root is None:
+        return Node(value)
+    if value < root.data:
+        root.left = insert(root.left, value)
+    else:
+        root.right = insert(root.right, value)
+    return root
 
-def ib(x):
-    global n
-    i=n
-    while i>0:
-        a[i]=a[i-1]
-        i=i-1
-    a[0]=x
-    n=n+1
+def search(root, key):
+    if root is None:
+        return False
+    if root.data == key:
+        return True
+    if key < root.data:
+        return search(root.left, key)
+    return search(root.right, key)
 
+root = None
+for value in [50, 30, 70, 20, 40, 60, 80]:
+    root = insert(root, value)
 
-def ie(x):
-    global n
-    a[n]=x
-    n=n+1
+key = int(input("Enter key to search: "))
 
-
-def ip(p,x):
-    global n
-    i=n
-    while i>p:
-        a[i]=a[i-1]
-        i=i-1
-    a[p]=x
-    n=n+1
-
-
-def db():
-    global n
-    i=0
-    while i<n-1:
-        a[i]=a[i+1]
-        i=i+1
-    n=n-1
-
-
-def de():
-    global n
-    n=n-1
-
-
-def dp(p):
-    global n
-    i=p
-    while i<n-1:
-        a[i]=a[i+1]
-        i=i+1
-    n=n-1
-
-
-ib(5)
-ie(50)
-ip(2,15)
-
-print("After insertion:",a[:n])
-
-db()
-de()
-dp(1)
-
-print("After deletion:",a[:n])
+if search(root, key):
+    print("Key found in BST")
+else:
+    print("Key not found in BST")
