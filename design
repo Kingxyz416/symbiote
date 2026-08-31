@@ -2,7 +2,7 @@ class listnode:
     def __init__(self,key=-1,value=-1,next=None):
         self.key=key
         self.value=value
-        self.next= None
+        self.next= next
 class MyHashMap(object):
     def __init__(self):
         self.map=[listnode() for i in range(1000)]
@@ -27,7 +27,7 @@ class MyHashMap(object):
         index=key%len(self.map)
         a=self.map[index]
         while a and a.next:
-            if a.key==key:
+            if a.next.key==key:
                 a.next=a.next.next
                 return 
             a=a.next
