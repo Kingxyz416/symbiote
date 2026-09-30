@@ -3,11 +3,24 @@ class listnodes:
     def __init__(self,size):
         self.size=size
         self.next=None
+        self.bucket=[[] for _ in range(967)]
 class hash:
-    def __init__(self):
-        self.set=listnodes([0] for _ in range(10))
+    
     def index(self,key):
-        a= key% len(self.set)
-        return a
+         key % self.size
+        
+    def put(self,key,value):
+        index=self.index(key)
+        bucket = self.set[index]
+        while bucket.next:
+            if bucket.next.key==key:
+                return 
+            bucket=bucket.next
+            bucket.next=listnodes[key]
+    print(put(1,12))
+
+
+
+ 
 
     
