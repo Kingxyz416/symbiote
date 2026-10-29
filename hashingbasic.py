@@ -17,7 +17,8 @@ class hash:
                 return 
             bucket=bucket.next
             bucket.next=listnodes[key]
-    print(put(1,12))
+if __name__=="__main__":
+    
 
 
 
