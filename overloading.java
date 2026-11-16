@@ -10,7 +10,7 @@ class calc{
     }
 }
 class sci extends calc{
-    int add(int a){
+    @Override int add(int a , int b){
         return a + 1;
     }
 }
@@ -21,6 +21,6 @@ public class overloading{
         System.out.println(c.add(2,5,3));
         System.out.println(c.add("ja","va"));
         sci s = new sci();
-        System.out.println(s.add(2));
+        System.out.println(s.add(2,6));
     }
 }
